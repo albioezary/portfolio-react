@@ -1,11 +1,12 @@
 @font-face {
   font-family: "BinyoFont";
-  src: url("./fonts/Cris.woff2") format("woff2"),
-    url("./fonts/Cris.woff") format("woff");
+  src: url("/fonts/Cris.woff2") format("woff2"),
+       url("/fonts/Cris.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 
 /* ===== HERO SECTION RESET ===== */
 .home {
@@ -681,7 +682,7 @@
 }
 
 .cta-section{
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(245, 245, 245);
   border-top-left-radius: 70px;
   border-top-right-radius: 70px;
   height: 75vh;
