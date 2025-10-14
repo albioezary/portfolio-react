@@ -1,22 +1,16 @@
 /* ====== CONTAINER ====== */
 .projects-container {
-  padding: 2rem;
+  padding: 5rem 2rem;
   color: #fff;
-  background-color: #111;
+  background-color: rgb(10, 10, 10);
   min-height: 100vh;
   font-family: "BinyoFont", sans-serif;
 }
 
-.projects-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  font-family: "BinyoFont", sans-serif;
-  letter-spacing: 1px;
-}
 
 /* ====== CATEGORY FILTER ====== */
 .category-filter {
+    font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -26,14 +20,16 @@
 
 .filter-btn {
   padding: 0.6rem 1.2rem;
+  font-family: "Inter", sans-serif;
   background: transparent;
-  border: 1px solid #555;
+  border: 1px solid #ffffff;
+  font-weight: 600;
   border-radius: 20px;
-  color: #ccc;
+  color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+  letter-spacing: -1px;
 }
 
 .filter-btn:hover {
@@ -58,7 +54,6 @@
   margin-bottom: 1rem;
   break-inside: avoid;
   overflow: hidden;
-  border-radius: 12px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -66,7 +61,6 @@
 .masonry-item img {
   width: 100%;
   display: block;
-  border-radius: 12px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -142,7 +136,6 @@
   position: relative;
   max-width: 92vw; /* 🧘‍♂️ napas kanan kiri lebih lega */
   max-height: 88vh;
-  border-radius: 14px;
   background: #000;
   display: flex;
   justify-content: center;
@@ -160,7 +153,6 @@
   max-width: 100%;
   max-height: 82vh;
   object-fit: contain;
-  border-radius: 10px;
   margin: auto;
   user-select: none;
   pointer-events: none;
@@ -195,7 +187,6 @@
   .modal-content {
     max-width: 95vw;
     max-height: 85vh;
-    border-radius: 12px;
   }
 
   .modal-content img {
@@ -285,3 +276,67 @@
 .fixed-close:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
+
+.zoom-controls {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1001;
+    pointer-events: none;
+}
+
+.zoom-controls button {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  font-size: 24px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+    pointer-events: all;
+}
+
+.zoom-controls button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+
+
+
+
+/* ====== Fade Animations ====== */
+.modal-overlay.fade-in {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.modal-overlay.fade-out {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* ====== Smooth hover animasi zoom buttons ====== */
+.zoom-controls button {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.zoom-controls button:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ====== Image transition smoothing ====== */
+.modal-content img {
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
