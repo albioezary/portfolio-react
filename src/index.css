@@ -1,0 +1,24 @@
+body {
+  background-color: rgb(15, 15, 15);
+  overflow: hidden; /* jangan dihapus ini */
+}
+
+/* Biar tetap bisa scroll tapi scrollbar-nya ilang */
+html, body {
+  height: auto;
+  overflow-y: auto;
+ overflow-x: hidden; /* 🔥 hilangkan scroll horizontal */
+  touch-action: pan-y !important;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch; /* biar halus di HP */
+}
+
+/* Sembunyikan scrollbar di semua browser */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+}

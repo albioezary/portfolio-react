@@ -1,0 +1,132 @@
+.footer-sticky {
+  font-family: 'Inter', sans-serif;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  font-size: clamp(0.8rem, 0.9vw, 1rem);
+  letter-spacing: 0.05em;
+  z-index: 99;
+  box-sizing: border-box;
+  mix-blend-mode: difference;
+}
+
+
+.footer-right a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 0.3rem;
+  transition: color 0.3s;
+}
+
+.footer-right a:hover {
+  color: #b9b9b9;
+}
+
+.footer-divider {
+  margin: 0 0.3rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-center {
+  margin-left: 25px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .footer-sticky {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-center {
+    margin-left: 50px;
+  }
+
+  .footer-right a {
+    margin: 0 0.2rem;
+  }
+}
+
+/* Tablet Portrait (≤ 768px) */
+@media (max-width: 768px) {
+  .footer-sticky {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.3rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .footer-center {
+    margin-left: 0;
+    order: 2;
+  }
+
+  .footer-left {
+    order: 1;
+  }
+
+  .footer-right {
+    order: 3;
+  }
+
+  .footer-right a {
+    display: inline-block;
+    margin: 0 0.25rem;
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .footer-sticky {
+    flex-direction: row; /* tetap horizontal */
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.7rem;
+    flex-wrap: wrap; /* biar kalau sempit, elemen bisa turun satu baris elegan */
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    width: auto;
+    text-align: center;
+  }
+
+  .footer-center {
+    margin-left: 0;
+  }
+
+  .footer-right a {
+    display: inline-block;
+    margin: 0 0.2rem;
+  }
+
+  .footer-divider {
+    display: inline;
+  }
+}
+
+/* Very Small Devices (≤ 320px) */
+@media (max-width: 320px) {
+  .footer-sticky {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.6rem;
+    flex-wrap: wrap; /* biar tetap responsif */
+  }
+
+  .footer-right a {
+    margin: 0 0.15rem;
+  }
+}
