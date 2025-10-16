@@ -1,0 +1,258 @@
+/* ======= Section Styling ======= */
+.selected-work-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 6rem;
+}
+
+.selected-title {
+  font-size: 6rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  text-align: center;
+  letter-spacing: -0.9px;
+  text-transform: uppercase;
+}
+
+.anjay {
+  position: relative;
+  font-family: "BinyoFont", sans-serif;
+  display: inline-block;
+}
+
+.anjay::before {
+   content: "";
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 100%;
+  height: 90%;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-4deg);
+  z-index: -1;
+  mix-blend-mode: difference;
+}
+
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.work-item {
+  overflow: hidden;
+  text-align: center;
+}
+
+.work-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+
+/* ======= Info Inline (Title + Genre + Year Sejajar) ======= */
+.work-info-inline {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.work-title {
+  font-family: "BinyoFont", sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.work-meta-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
+
+.dot-separator {
+  opacity: 0.6;
+}
+
+.work-genre {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.work-year {
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+
+
+/* ======= CTA Button Area ======= */
+.work-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+/* Unik class name untuk button ini */
+.work-cta-button {
+  position: relative;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid transparent;
+  outline: none;
+  font-family: "BinyoFont", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  padding: 1.2rem 3rem;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  border-radius: 100px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.5s ease, border-color 0.5s ease;
+  z-index: 1;
+}
+
+.work-cta-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000000;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.3s ease;
+  z-index: -1;
+}
+
+.work-cta-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.work-cta-button:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.work-cta-button:hover::before {
+  clip-path: inset(0 0 0 0);
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 768px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .work-cta-button {
+    width: 100%;
+  }
+}
+
+
+/* ======= Responsive Breakpoints ======= */
+
+/* Tablet (max 1024px) */
+@media (max-width: 1024px) {
+  .selected-title {
+    font-size: 4.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .anjay::before {
+    width: 120%;
+    height: 100%;
+  }
+
+  .work-title {
+    font-size: 2.2rem;
+  }
+
+  .work-meta-inline {
+    font-size: 0.85rem;
+  }
+
+  .work-grid {
+    gap: 1.8rem;
+  }
+}
+
+/* Mobile besar (max 768px) */
+@media (max-width: 768px) {
+  .selected-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .anjay::before {
+    width: 140%;
+    height: 90%;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .work-info-inline {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .work-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .work-meta-inline {
+    font-size: 0.85rem;
+  }
+
+  .work-cta-button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Mobile kecil (max 480px) */
+@media (max-width: 480px) {
+  .selected-title {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .anjay::before {
+    width: 160%;
+    height: 100%;
+  }
+
+  .work-title {
+    font-size: 1.6rem;
+  }
+
+  .work-meta-inline {
+    font-size: 0.75rem;
+  }
+
+  .work-cta-button {
+    font-size: 1rem;
+    padding: 0.9rem 1.8rem;
+  }
+
+  .work-grid {
+    gap: 1.5rem;
+  }
+}

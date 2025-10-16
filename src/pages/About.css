@@ -3,7 +3,7 @@
   background-color: rgb(0, 0, 0);
   color: #fff;
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   justify-content: start;
   align-items: flex-start;
@@ -35,25 +35,8 @@
   margin-bottom: 1rem;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .about-section {
-    padding: 80px 8vw;
-  }
-}
+/* ===== RESPONSIVE (ABOUT) ===== */
 
-@media (max-width: 768px) {
-  .about-line {
-    font-size: clamp(1.5rem, 6vw, 2.6rem);
-    line-height: 1.2;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-section {
-    padding: 60px 6vw;
-  }
-}
 
 /* ===== WHAT I DO SECTION ===== */
 .whatido-section {
@@ -83,7 +66,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding-left: 15px;
+  padding-left: 35px;
 }
 
 .whatido-title {
@@ -171,24 +154,95 @@
   object-fit: cover;
 }
 
-/* Responsive tweak */
+
+
+
+/* ===== RESPONSIVE (WHAT I DO) ===== */
+
+/* 📱 Tablet (<=1024px) */
+@media (max-width: 1024px) {
+  .whatido-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  }
+
+  .whatido-section{
+    padding: 10rem 0.1rem;
+  }
+
+  .about-section {
+    padding-bottom: 0;
+  }
+
+
+  .focus-label {
+    font-size: clamp(1.2rem, 6vw, 3.2rem);
+  }
+
+  .focus-sub {
+    font-size: 0.9rem;
+  }
+
+  .whatido-image {
+    width: 500px;
+  }
+}
+
+/* 📲 Mobile (<=768px) */
 @media (max-width: 768px) {
   .whatido-container {
     flex-direction: column-reverse;
+    align-items: center;
     text-align: center;
-    padding: 0 1.5rem; /* biar tetap ada napas dikit di HP */
+    padding: 0 1.5rem;
+  }
+
+  .whatido-section {
+    padding: 0;
+    padding-bottom: 5rem;
   }
 
   .whatido-left {
     align-items: center;
+    padding: 0;
   }
 
-  .whatido-desc {
-    max-width: 90%;
+  .whatido-right {
+    justify-content: center;
+    padding: 0;
   }
 
   .whatido-image {
-    width: 280px;
+    width: 100%;
     aspect-ratio: 4 / 5;
+    margin-bottom: 3rem;
+  }
+
+  .focus-label {
+    font-size: clamp(1.6rem, 7vw, 2.8rem);
+  }
+
+  .focus-sub {
+    font-size: 0.85rem;
   }
 }
+
+/* 📱 Small Mobile (<=480px) */
+@media (max-width: 480px) {
+  .whatido-image {
+    width: 240px;
+    margin-bottom: 2rem;
+  }
+
+  .focus-label {
+    font-size: clamp(1.4rem, 8vw, 2.2rem);
+  }
+
+  .focus-sub {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+

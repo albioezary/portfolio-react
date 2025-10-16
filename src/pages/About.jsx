@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import CTA from "../components/CTA";
 import "./About.css";
 
 function About() {
@@ -104,11 +105,24 @@ function About() {
               src="/images/nkokko2.jpg"
               alt="Binyo creative visual"
               className="whatido-image parallax"
-              style={{ y: [0, -60] }}
+              transition={{ type: "spring", stiffness: 120 }}
             />
           </motion.div>
         </div>
       </section>
+
+
+
+
+
+
+
+
+
+
+
+      {/* ===== CTA SECTION ===== */}
+<CTA />
     </>
   );
 }

@@ -1,0 +1,344 @@
+.contactgrunge-section {
+  min-height: 88vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-top: 60px;
+
+  background-image: url("/images/icon/bgcontt.jpg"); /* ganti path sesuai gambar lo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+.contactgrunge-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-radial-gradient(
+    circle at random,
+    transparent 0 100px,
+    rgba(255, 255, 255, 0.08) 100px 101px
+  );
+  mix-blend-mode: screen;
+  opacity: 0.2;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+.contactgrunge-section h2 {
+  margin: 0;
+}
+
+.contactgrunge-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: clamp(4rem, 11vw, 10rem);
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: -0.06em;
+  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+
+.hihglight {
+  font-family: "BinyoFont", sans-serif;
+  font-weight: 400;
+  display: inline-block;
+  transform: rotate(-3deg);
+  color: #ffffff;
+}
+
+.contactgrunge-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+  margin-top: -40px
+}
+
+.contactgrunge-item {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1rem, 3vw, 4rem);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  padding: 0.4rem 0.8rem;
+  background: rgba(0, 0, 0, 0.822);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transform: rotate(var(--angle, 2deg));
+    text-shadow: 
+    1px 1px 0 #ffffff33,
+    -1px -1px 0 #ffffff1a,
+    2px 2px 2px #00000055; /* bayangan tipis biar kotor */
+}
+
+.contactgrunge-item:nth-child(1) {
+  --angle: 3deg;
+}
+.contactgrunge-item:nth-child(2) {
+  --angle: -4deg;
+}
+.contactgrunge-item:nth-child(3) {
+  --angle: 2.5deg;
+}
+
+/* efek hover */
+.contactgrunge-item:hover {
+  transform: translateY(-1px) scale(1.03);
+  opacity: 0.85;
+}
+
+/* icon style */
+.contactgrunge-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+
+
+
+
+.contactgrunge-patches {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* biar gak ganggu klik ke link utama */
+  overflow: hidden;
+  z-index: 1;
+}
+
+.patch-item {
+  position: absolute;
+  opacity: 0.85;
+  mix-blend-mode: difference;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.patch-item:hover {
+  transform: rotate(2deg) scale(1.05);
+  opacity: 1;
+}
+
+/* posisi acak + rotasi */
+.patch-1 {
+  top: 8.5%;
+  left: 5%;
+  width: 260px;
+  transform: rotate(-8deg);
+}
+
+.patch-2 {
+  top: 40%;
+  left: 5%;
+  width: 520px;
+  transform: rotate(12deg);
+}
+
+.patch-3 {
+  top: -1%;
+  right: 7%;
+  width: 350px;
+  transform: rotate(-5deg);
+}
+
+
+.patch-4 {
+  bottom: -7%;
+  right: 17%;
+  width: 290px;
+  transform: rotate(-9deg);
+}
+
+
+/* ============================= */
+/* 📱 RESPONSIVE CONTACT GRUNGE */
+/* ============================= */
+
+@media (max-width: 1024px) {
+  .contactgrunge-section {
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .contactgrunge-title {
+    font-size: clamp(3rem, 9vw, 6rem);
+    margin-bottom: 2rem;
+  }
+
+  .contactgrunge-links {
+    margin-top: 0;
+    align-items: center;
+  }
+
+  .contactgrunge-item {
+    font-size: clamp(0.9rem, 4vw, 2rem);
+    gap: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    transform: none;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .contactgrunge-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* PATCH RESPONSIVE - tablet */
+  .patch-1 {
+    top: 5%;
+    left: 2%;
+    width: 180px;
+    transform: rotate(-5deg);
+  }
+
+  .patch-2 {
+    top: 55%;
+    left: 3%;
+    width: 300px;
+    transform: rotate(8deg);
+  }
+
+  .patch-3 {
+    top: 5%;
+    right: 3%;
+    width: 260px;
+    transform: rotate(-3deg);
+  }
+
+  .patch-4 {
+    bottom: -4%;
+    right: 10%;
+    width: 220px;
+    transform: rotate(-6deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .contactgrunge-section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0rem;
+  }
+
+  .contactgrunge-title {
+    font-size: clamp(2.8rem, 10vw, 5rem);
+  }
+
+  .contactgrunge-links {
+    gap: 0.8rem;
+  }
+
+  .contactgrunge-item {
+    font-size: clamp(0.85rem, 3.5vw, 1.3rem);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+  }
+
+  .contactgrunge-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* PATCH RESPONSIVE - mobile mid */
+  .patch-1 {
+    top: 6%;
+    left: 3%;
+    width: 140px;
+  }
+
+  .patch-2 {
+    top: 65%;
+    left: 2%;
+    width: 200px;
+  }
+
+  .patch-3 {
+    top: 10%;
+    right: 5%;
+    width: 180px;
+  }
+
+  .patch-4 {
+    bottom: 2%;
+    right: 10%;
+    width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactgrunge-section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem 0rem;
+  }
+
+  .contactgrunge-title {
+    font-size: clamp(2.2rem, 12vw, 4rem);
+    letter-spacing: -0.03em;
+  }
+
+  .contactgrunge-links {
+    gap: 0.6rem;
+  }
+
+  .contactgrunge-item {
+    flex-direction: row;
+    font-size: clamp(0.75rem, 4vw, 1rem);
+    padding: 0.4rem 0.6rem;
+    transform: none;
+  }
+
+  .contactgrunge-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* PATCH RESPONSIVE - mobile kecil */
+  .patch-1 {
+    top: 3%;
+    left: 4%;
+    width: 90px;
+    opacity: 0.35;
+  }
+
+  .patch-2 {
+    display: none; /* biar nggak nutup teks */
+  }
+
+  .patch-3 {
+    top: 4%;
+    right: 5%;
+    width: 120px;
+    opacity: 0.35;
+  }
+
+  .patch-4 {
+    bottom: 0;
+    right: 8%;
+    width: 100px;
+    opacity: 0.35;
+  }
+}

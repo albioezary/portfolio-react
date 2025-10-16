@@ -100,7 +100,7 @@
 
 @media (max-width: 600px) {
   .masonry-grid {
-    column-count: 1;
+    column-count: 2;
   }
 
   .projects-title {

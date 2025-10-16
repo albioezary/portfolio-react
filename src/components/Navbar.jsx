@@ -4,6 +4,7 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiamond, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
+import AnimatedLink from "./AnimatedLink"; // ✅ tambahin ini
 import "./Navbar.css";
 
 function Navbar() {
@@ -14,55 +15,64 @@ function Navbar() {
   const navItems = ["projects", "about", "resume", "contact"];
 
   return (
-    <motion.header 
+    <motion.header
       className="navbar"
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
+      {/* === LOGO === */}
       <div className="nav-left">
-        <Link to="/" className="nav-logo">ALBIOEZARY</Link>
+        <AnimatedLink to="/" className="nav-logo">
+          ALBIOEZARY
+        </AnimatedLink>
       </div>
 
-      {/* ===== HAMBURGER BUTTON (Mobile) ===== */}
-      <button 
-        className="hamburger" 
+      {/* === HAMBURGER BUTTON (Mobile) === */}
+      <button
+        className="hamburger"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle menu"
       >
         <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
       </button>
 
-      {/* ===== NAV LINKS ===== */}
+      {/* === NAV LINKS === */}
       <nav className={`nav-right ${menuOpen ? "open" : ""}`}>
         <ul>
           {navItems.map((item, idx) => {
-            const text = item === "about" ? "ABOUT" :
-                         item === "resume" ? "RÉSUMÉ" :
-                         item === "contact" ? "KONTAK" :
-                         "PROJECTS";
+            const text =
+              item === "about"
+                ? "ABOUT"
+                : item === "resume"
+                ? "RÉSUMÉ"
+                : item === "contact"
+                ? "CONTACT"
+                : "PROJECTS";
 
             return (
               <li key={idx}>
-                <NavLink
+                <AnimatedLink
                   to={`/${item}`}
-                  className={({ isActive }) =>
-                    !isHome && isActive 
-                      ? `nav-item active ${item === "contact" ? "contact-link" : ""}`
+                  className={
+                    !isHome && location.pathname === `/${item}`
+                      ? `nav-item active ${
+                          item === "contact" ? "contact-link" : ""
+                        }`
                       : `nav-item ${item === "contact" ? "contact-link" : ""}`
                   }
-                  onClick={() => setMenuOpen(false)} // close menu on click
+                  onClick={() => setMenuOpen(false)}
                 >
                   <FontAwesomeIcon icon={faDiamond} className="diamond-icon" />
                   {text}
-                </NavLink>
+                </AnimatedLink>
               </li>
             );
           })}
         </ul>
       </nav>
 
-      {/* ===== MOBILE OVERLAY (Optional) ===== */}
+      {/* === MOBILE OVERLAY === */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
