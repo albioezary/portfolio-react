@@ -108,10 +108,10 @@ function HeroBackground3D() {
         color="#ffffff"
       />
       <directionalLight position={[-3, 1, -2]} intensity={7} color="#f5f7ff" />
-      <directionalLight position={[3, 1, -2]} intensity={19} color="#f5f7ff" />
+      <directionalLight position={[3, 1, -2]} intensity={19} color="#ffffff" />
       <directionalLight position={[0, 1, -4]} intensity={10} color="#ffffff" />
       <directionalLight position={[0, 3, 1]} intensity={3.5} color="#ffffff" />
-      <ambientLight intensity={0.8} color="#3a3a3a" />
+      <ambientLight intensity={0.8} color="#080808" />
 
       <Suspense fallback={null}>
         <Model url="/models/koceng.glb" />

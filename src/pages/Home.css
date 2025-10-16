@@ -76,7 +76,7 @@
   font-family: "BinyoFont", sans-serif;
   font-size: clamp(8rem, 29vw, 35rem);
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   line-height: 0.95;
   color: #ffffff;
   margin: 0;
